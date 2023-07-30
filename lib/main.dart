@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/home_page.dart';
+import 'package:flutter_application_1/login_page.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // const MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,15 @@ class MyApp extends StatelessWidget {
     // String name = "Jaiyant Jakhar";
 
     return MaterialApp(
-      home: homepage(),
+      // home: homepage(),
+
+      initialRoute: "/home",
+
+      routes: {
+        "/": (context) => loginpage(),
+        "/home": (context) => homepage(),
+        "/login": (context) => loginpage(),
+      },
     );
   }
 }
