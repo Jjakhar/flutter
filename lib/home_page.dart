@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class homepage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   // const homepage({super.key});
 
   @override
@@ -10,7 +10,7 @@ class homepage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("First App"),
+        title: Text("Catalog App"),
       ),
       body: Center(
         child: Container(
