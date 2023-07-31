@@ -5,7 +5,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int x = 2;
+    int x = 1;
     String name = "Jaiyant Jakhar";
 
     return Scaffold(
