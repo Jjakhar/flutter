@@ -1,8 +1,14 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
+// import 'dart:html';
+
 class CatalogModel {
-  static final items = [
+  static List<Item> items = [
     Item(1, "iPhone 15 Pro Max", "Latest A17 bionic chip", 1199, "#33505a",
         "https://img4.gadgetsnow.com/gd/images/products/additional/large/G390862_View_1/mobiles/smartphones/apple-iphone-14-pro-max-512-gb-gold-6-gb-ram-.jpg")
   ];
+
+  // static List<Item> items;
 }
 
 class Item {
@@ -13,5 +19,100 @@ class Item {
   final String color;
   final String image;
 
-  Item(this.id, this.name, this.desc, this.price, this.color, this.image);
+  Item(
+    this.id,
+    this.name,
+    this.desc,
+    this.price,
+    this.color,
+    this.image,
+  );
+
+  factory Item.fromJson(Map<String, dynamic> map) {
+    return Item(map["id"], map["name"], map["desc"], map["price"], map["color"],
+        map["image"]);
+  }
+
+  topJson() => {
+        "id": id,
+        "name": name,
+        "desc": desc,
+        "price": price,
+        "color": color,
+        "image": image,
+      };
+
+  // below code from extension
+
+  // Item copyWith({
+  //   int? id,
+  //   String? name,
+  //   String? desc,
+  //   num? price,
+  //   String? color,
+  //   String? image,
+  // }) {
+  //   return Item(
+  //     id ?? this.id,
+  //     name ?? this.name,
+  //     desc ?? this.desc,
+  //     price ?? this.price,
+  //     color ?? this.color,
+  //     image ?? this.image,
+  //   );
+  // }
+
+  // Map<String, dynamic> toMap() {
+  //   return <String, dynamic>{
+  //     'id': id,
+  //     'name': name,
+  //     'desc': desc,
+  //     'price': price,
+  //     'color': color,
+  //     'image': image,
+  //   };
+  // }
+
+  // factory Item.fromMap(Map<String, dynamic> map) {
+  //   return Item(
+  //     map['id'] as int,
+  //     map['name'] as String,
+  //     map['desc'] as String,
+  //     map['price'] as num,
+  //     map['color'] as String,
+  //     map['image'] as String,
+  //   );
+  // }
+
+  // String toJson() => json.encode(toMap());
+
+  // factory Item.fromJson(String source) => Item.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  // @override
+  // String toString() {
+  //   return 'Item(id: $id, name: $name, desc: $desc, price: $price, color: $color, image: $image)';
+  // }
+
+  // @override
+  // bool operator ==(covariant Item other) {
+  //   if (identical(this, other)) return true;
+
+  //   return
+  //     other.id == id &&
+  //     other.name == name &&
+  //     other.desc == desc &&
+  //     other.price == price &&
+  //     other.color == color &&
+  //     other.image == image;
+  // }
+
+  // @override
+  // int get hashCode {
+  //   return id.hashCode ^
+  //     name.hashCode ^
+  //     desc.hashCode ^
+  //     price.hashCode ^
+  //     color.hashCode ^
+  //     image.hashCode;
+  // }
 }
