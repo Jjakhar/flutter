@@ -18,15 +18,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // home: homepage(),
 
-      // initialRoute: "/home",
+      initialRoute: MyRoutes.homeroute,
 
       routes: {
         "/": (context) => LoginPage(),
         // "/home": (context) => HomePage(),
         // "/login": (context) => LoginPage(),
 
-        myroutes.homeroute: (context) => HomePage(),
-        myroutes.loginroute: (context) => LoginPage(),
+        MyRoutes.homeroute: (context) => HomePage(),
+        MyRoutes.loginroute: (context) => LoginPage(),
       },
     );
   }
