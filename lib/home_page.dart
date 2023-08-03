@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                       child: GridTile(
                         header: Container(
                             decoration: BoxDecoration(
-                              color: Colors.blue,
+                              color: Colors.deepPurple,
                             ),
                             padding: EdgeInsets.all(10),
                             child: Text(
