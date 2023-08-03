@@ -51,19 +51,21 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty) ? ListView.builder(
-            // itemCount: CatalogModel.items.length,
-            // itemCount: dummyList.length,
-            itemCount: CatalogModel.items.length,
-            itemBuilder: (context, index) {
-              return ItemWidget(
-                // curr_item: CatalogModel.items[index],
-                // curr_item: dummyList[index],
-                curr_item: CatalogModel.items[index],
-              );
-            }):Center(
-              child: CircularProgressIndicator(),
-            ),
+        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+            ? ListView.builder(
+                // itemCount: CatalogModel.items.length,
+                // itemCount: dummyList.length,
+                itemCount: CatalogModel.items.length,
+                itemBuilder: (context, index) {
+                  return ItemWidget(
+                    // curr_item: CatalogModel.items[index],
+                    // curr_item: dummyList[index],
+                    curr_item: CatalogModel.items[index],
+                  );
+                })
+            : Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
       // drawer: Drawer(),
       drawer: MyDrawer(),

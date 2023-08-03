@@ -3,10 +3,7 @@ import 'dart:convert';
 // import 'dart:html';
 
 class CatalogModel {
-  static List<Item> items = [
-    Item(1, "iPhone 15 Pro Max", "Latest A17 bionic chip", 1199, "#33505a",
-        "https://img4.gadgetsnow.com/gd/images/products/additional/large/G390862_View_1/mobiles/smartphones/apple-iphone-14-pro-max-512-gb-gold-6-gb-ram-.jpg")
-  ];
+  static List<Item> items = [];
 
   // static List<Item> items;
 }
